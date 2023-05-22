@@ -1,95 +1,67 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+
+import User from "./user/page";
+import AuthLayout from "./auth/layout";
+import Signup from "./auth/signup/page";
+import UserLayout from "./user/layout";
 
 export default function Home() {
+  const session = true;
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    <>{session ? <UserLayout children={<User />} /> : <AuthLayout children={<Signup />} />}</>
+    // <Flex bg="#02B2AF" h="100vh" color="#243241" wrap="wrap">
+    //   <Center w={{ base: "100%", md: "50%" }}>
+    //     <Box>
+    //       <Heading
+    //         fontSize={{ base: "4xl", md: "6xl", lg: "8xl" }}
+    //         textAlign={{ base: "center", md: "left" }}
+    //         mb="1rem"
+    //       >
+    //         Howfar
+    //       </Heading>
+    //       <Text
+    //         textAlign={{ base: "center", md: "left" }}
+    //         fontSize={{ base: "17px", md: "20px", lg: "24px" }}
+    //       >
+    //         Tell us what's popping!
+    //       </Text>
+    //     </Box>
+    //   </Center>
+    //   <Center w={{ base: "100%", md: "50%" }} bg="#243241">
+    //     <Box>
+    //       <Heading color="white" mb="1rem">
+    //         Signup
+    //       </Heading>
+    //       <Text mb=".5rem" color="white">We gather dey!</Text>
+    //       <Box
+    //         borderRadius=".5rem"
+    //         bg="white"
+    //         h="22rem"
+    //         w="22rem"
+    //         p="1rem"
+    //         pt="3rem"
+    //       >
+    //         <Box  mb="1rem">
+    //           <Text fontSize=".8rem" m="auto">Email:</Text>
+    //           <Input  placeholder="Enter your email" />
+    //         </Box>
+    //         <Box  mb="1rem">
+    //           <Text fontSize=".8rem" m="auto">Password:</Text>
+    //           <Input  placeholder="Enter your password" />
+    //         </Box>
+    //         <Text fontSize=".8rem">
+    //           Already have an account?
+    //           <Link href="/Auth/Login">Login</Link>
+    //         </Text>
+    //         <Button bg="#02B2AF" mt="1rem" mb=".5rem" w="100%">
+    //           Signup
+    //         </Button>
+    //         <Button bg="yellow" w="100%">
+    //           Signup with Google
+    //         </Button>
+    //       </Box>
+    //     </Box>
+    //   </Center>
+    // </Flex>
+  );
 }

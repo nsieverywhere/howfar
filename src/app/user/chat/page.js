@@ -1,5 +1,5 @@
 // fetch data on the client side using swr
-"use client"
+"use client";
 import useSWR from "swr";
 
 const fetcher = async () => {
@@ -10,18 +10,17 @@ const fetcher = async () => {
 };
 
 const Chat = () => {
-  const { data, error } = useSWR("chat", fetcher);
-
-  if (error) return "An error has occured, check your internet connection."
-  if(!data) return "loading..."
-
+  const { data, error, isLoading } = useSWR("/api/chat", fetcher);
+  if (error)
+    return <div>An error has occured, check your internet connection.</div>;
+  if (isLoading) return <div>loading...</div>
+  if (!data) return <div>loading...</div>
   return (
-    <>
-      {data.map(item => {
-        return (<div key={item.id}>{item.title}</div>)
-         
-     })}
-    </>
+    <div>
+      {data.map((item) => {
+        return <div key={item.id}>{item.title}</div>;
+      })}
+    </div>
   );
 };
 

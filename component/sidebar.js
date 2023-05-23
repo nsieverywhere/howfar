@@ -34,7 +34,6 @@ const Sidebar = () => {
         <Heading fontSize="2xl" mb="1rem">
           Welcome Nsikan,
         </Heading>
-
         <Navbtn icon={<MdFeed size="1.5rem" />} title="Feed" linkto="/user/feed" />
         <Navbtn icon={<BsChatSquareTextFill  size="1.5rem" />} title="Chat" linkto="/user/chat" />
         <Navbtn icon={<MdSpaceDashboard size="1.5rem" />} title="Dashboard" linkto="/user/dashboard"  />

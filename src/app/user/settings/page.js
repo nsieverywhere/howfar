@@ -10,14 +10,9 @@ const Settings = async () => {
     <div>
       working
       {data.map((item) => {
-        return (
-          <div key={item.id}>
-            <div>{item.name}</div>
-            <div>{item.username}</div>
-
-          </div>
-        );
+        return <div>{item.name}</div>
       })}
+        
     </div>
   );
 };

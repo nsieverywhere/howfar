@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import {
   Card,
   Flex,
@@ -11,7 +11,7 @@ import {
   Heading,
 } from "@chakra-ui/react";
 
-const Postcard = () => {
+const Postcard = ({ post, owner, time }) => {
   return (
     <Flex direction={{ base: "column", sm: "row" }}>
       <Card
@@ -25,7 +25,7 @@ const Postcard = () => {
         boxShadow="0 4px 12px 0 rgba(0,0,0,0.1)"
       >
         <CardBody>
-          <Text>View a summary of all l your customers over the last month.</Text>
+          <Text>{post}</Text>
         </CardBody>
 
         <CardFooter
@@ -41,8 +41,8 @@ const Postcard = () => {
             <Avatar size="sm" name="Nsikan Simon" src="/profile/nsi.png" />
 
             <Box>
-              <Heading fontSize=".8rem">By Nsikan Simon</Heading>
-              <Text fontSize=".7rem">time and date</Text>
+              <Heading fontSize=".8rem">@{owner}</Heading>
+              <Text fontSize=".7rem">{time}</Text>
             </Box>
           </Flex>
         </CardFooter>
